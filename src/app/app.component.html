@@ -1,8 +1,8 @@
 <h1>Terra</h1>
 <div *ngFor="let key of keys; let a = index">
   <h1 style="color: red;">{{ key }}</h1>
-  <div *ngFor="let title of titles[a]; let i = index">
-    <h3 style="color: blue;">{{title}}</h3>
-    <span *ngFor="let value of values[i]">{{ value }}<br /></span>
+  <div *ngFor="let data of titles[a]; let i = index">
+    <h3 style="color: blue;">{{data.title}}</h3>
+    <span *ngFor="let value of data.values">{{ value }}<br /></span>
   </div>
 </div>

@@ -10,15 +10,15 @@ export class AppComponent implements OnInit {
   
   keys: any = [];
   titles: any = [];
-  values: any = [];
 
   ngOnInit() {
     Object.entries(terra).forEach(([key, value]) => {
+      let tmptitles:any = [];
       this.keys = [...this.keys, key];
       Object.entries(value).forEach(([key2, value2]) => {
-        this.titles = [...this.titles, key2];
-        this.values = [...this.values, value2];
+        tmptitles = [...tmptitles, {title: key2, values: value2}];
       });
+      this.titles = [...this.titles, tmptitles];
     })
   }
 
